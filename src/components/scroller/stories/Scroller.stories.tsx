@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Scroller } from "../component";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { within, userEvent } from "@storybook/testing-library";

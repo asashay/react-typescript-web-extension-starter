@@ -1,8 +1,7 @@
-import React from "react";
+import { useEffect } from "react";
 import { Hello } from "@src/components/hello";
 import browser, { Tabs } from "webextension-polyfill";
 import { Scroller } from "@src/components/scroller";
-import css from "./styles.module.css";
 
 // // // //
 
@@ -51,14 +50,14 @@ function executeScript(position: number): void {
 
 export function Popup() {
     // Sends the `popupMounted` event
-    React.useEffect(() => {
+    useEffect(() => {
         browser.runtime.sendMessage({ popupMounted: true });
     }, []);
 
     // Renders the component tree
     return (
-        <div className={css.popupContainer}>
-            <div className="mx-4 my-4">
+        <div>
+            <div>
                 <Hello />
                 <hr />
                 <Scroller

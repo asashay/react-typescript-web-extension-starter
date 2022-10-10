@@ -16,29 +16,6 @@ module.exports = {
                 test: /\.tsx?$/,
                 use: "ts-loader",
             },
-            // Treat src/css/app.css as a global stylesheet
-            {
-                test: /\app.css$/,
-                use: [
-                    "style-loader",
-                    "css-loader",
-                    "postcss-loader",
-                ],
-            },
-            // Load .module.css files as CSS modules
-            {
-                test: /\.module.css$/,
-                use: [
-                    "style-loader",
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: true,
-                        },
-                    },
-                    "postcss-loader",
-                ],
-            },
         ],
     },
     // Setup @src path resolution for TypeScript files
